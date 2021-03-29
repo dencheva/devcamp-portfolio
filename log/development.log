@@ -1,0 +1,181 @@
+Started GET "/" for 127.0.0.1 at 2021-03-28 13:56:43 +0300
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/vyaradencheva/.rvm/gems/ruby-2.6.3/gems/railties-6.1.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/vyaradencheva/.rvm/gems/ruby-2.6.3/gems/railties-6.1.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.2ms | Allocations: 520)
+Completed 200 OK in 33ms (Views: 11.8ms | ActiveRecord: 0.0ms | Allocations: 4354)
+
+
+Started GET "/" for 127.0.0.1 at 2021-03-28 13:56:47 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/vyaradencheva/.rvm/gems/ruby-2.6.3/gems/railties-6.1.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/vyaradencheva/.rvm/gems/ruby-2.6.3/gems/railties-6.1.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.6ms | Allocations: 630)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.0ms | Allocations: 1420)
+
+
+Started GET "/pages" for 127.0.0.1 at 2021-03-28 13:56:48 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/pages"):
+  
+Started GET "/pages" for 127.0.0.1 at 2021-03-28 13:56:51 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/pages"):
+  
+Started GET "/" for 127.0.0.1 at 2021-03-28 13:56:52 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/vyaradencheva/.rvm/gems/ruby-2.6.3/gems/railties-6.1.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/vyaradencheva/.rvm/gems/ruby-2.6.3/gems/railties-6.1.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.3ms | Allocations: 44)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 421)
+
+
+Started GET "/Pages/home" for 127.0.0.1 at 2021-03-28 13:56:55 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/Pages/home"):
+  
+Started GET "/pages/home" for 127.0.0.1 at 2021-03-28 13:57:25 +0300
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.8ms | Allocations: 116)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+yarn run v1.22.10
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+
+
+error Command "webpack" not found.
+
+  Rendered layout layouts/application.html.erb (Duration: 3381.4ms | Allocations: 20144)
+Completed 500 Internal Server Error in 3387ms (ActiveRecord: 0.0ms | Allocations: 21242)
+
+
+  
+ActionView::Template::Error (Webpacker can't find application.js in /Users/vyaradencheva/devcamp/public/packs/manifest.json. Possible causes:
+1. You want to set webpacker.yml value of compile to true for your environment
+   unless you are using the `webpack -w` or the webpack-dev-server.
+2. webpack has not yet re-run to reflect updates.
+3. You have misconfigured Webpacker's config/webpacker.yml file.
+4. Your webpack configuration is not creating a manifest.
+Your manifest contains:
+{
+}
+):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+    13:   <body>
+  
+app/views/layouts/application.html.erb:10
+Started GET "/pages/home" for 127.0.0.1 at 2021-03-29 10:11:28 +0300
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 35)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+yarn run v1.22.10
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+
+
+error Command "webpack" not found.
+
+  Rendered layout layouts/application.html.erb (Duration: 3546.1ms | Allocations: 5373)
+Completed 500 Internal Server Error in 3554ms (Allocations: 5678)
+
+
+  
+ActionView::Template::Error (Webpacker can't find application.js in /Users/vyaradencheva/devcamp/public/packs/manifest.json. Possible causes:
+1. You want to set webpacker.yml value of compile to true for your environment
+   unless you are using the `webpack -w` or the webpack-dev-server.
+2. webpack has not yet re-run to reflect updates.
+3. You have misconfigured Webpacker's config/webpacker.yml file.
+4. Your webpack configuration is not creating a manifest.
+Your manifest contains:
+{
+}
+):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+    13:   <body>
+  
+app/views/layouts/application.html.erb:10
+Started GET "/pages/home" for 127.0.0.1 at 2021-03-29 10:20:53 +0300
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.0ms | Allocations: 35)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/vyaradencheva/devcamp/public/packs
+[Webpacker] Hash: e332c6419728fac579d5
+Version: webpack 4.46.0
+Time: 3504ms
+Built at: 03/29/2021 10:21:01 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-f826770d917d8a37c1d8.js    125 KiB  application  [emitted] [immutable]  application
+js/application-f826770d917d8a37c1d8.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-f826770d917d8a37c1d8.js js/application-f826770d917d8a37c1d8.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 492 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 8769.7ms | Allocations: 4771)
+Completed 200 OK in 8778ms (Views: 8774.4ms | Allocations: 5095)
+
+
+Started GET "/" for 127.0.0.1 at 2021-03-29 10:31:12 +0300
+  [1m[35m (4.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/vyaradencheva/.rvm/gems/ruby-2.6.3/gems/railties-6.1.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/vyaradencheva/.rvm/gems/ruby-2.6.3/gems/railties-6.1.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.8ms | Allocations: 355)
+Completed 200 OK in 20ms (Views: 10.1ms | ActiveRecord: 0.0ms | Allocations: 2654)
+
+
+Started GET "/Pages/home" for 127.0.0.1 at 2021-03-29 10:31:23 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/Pages/home"):
+  
+Started GET "/" for 127.0.0.1 at 2021-03-29 10:32:39 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/vyaradencheva/.rvm/gems/ruby-2.6.3/gems/railties-6.1.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/vyaradencheva/.rvm/gems/ruby-2.6.3/gems/railties-6.1.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 11.3ms | Allocations: 229)
+Completed 200 OK in 17ms (Views: 12.5ms | ActiveRecord: 0.0ms | Allocations: 1016)
+
+
+Started GET "/" for 127.0.0.1 at 2021-03-29 10:32:57 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/vyaradencheva/.rvm/gems/ruby-2.6.3/gems/railties-6.1.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/vyaradencheva/.rvm/gems/ruby-2.6.3/gems/railties-6.1.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.4ms | Allocations: 44)
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 391)
+
+
+Started GET "/" for 127.0.0.1 at 2021-03-29 10:33:44 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/vyaradencheva/.rvm/gems/ruby-2.6.3/gems/railties-6.1.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/vyaradencheva/.rvm/gems/ruby-2.6.3/gems/railties-6.1.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.4ms | Allocations: 45)
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 393)
+
+
+Started GET "/pages" for 127.0.0.1 at 2021-03-29 10:33:45 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/pages"):
+  
+Started GET "/pages/home" for 127.0.0.1 at 2021-03-29 10:33:46 +0300
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.8ms | Allocations: 116)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | Allocations: 6207)
+Completed 200 OK in 28ms (Views: 26.0ms | ActiveRecord: 0.0ms | Allocations: 7369)
+
+
