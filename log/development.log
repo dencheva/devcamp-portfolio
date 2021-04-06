@@ -336,3 +336,263 @@ Migrating to CreatePortfolios (20210330140153)
   [1m[36mActiveRecord::InternalMetadata Load (6.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(1647198560411391120)[0m
   [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (11.9ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "assdsa"], ["body", "asdad"], ["created_at", "2021-04-01 13:34:28.716416"], ["updated_at", "2021-04-01 13:34:28.716416"]]
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE DATABASE "devcamp_portfolio_development" ENCODING = 'unicode'[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE DATABASE "devcamp_portfolio_test" ENCODING = 'unicode'[0m
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35mSQL (2.0ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (26.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "blogs" CASCADE[0m
+  [1m[35m (25.5ms)[0m  [1m[35mCREATE TABLE "blogs" ("id" bigserial primary key, "title" character varying, "string" character varying, "body" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "portfolios" CASCADE[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "portfolios" ("id" bigserial primary key, "title" character varying, "subtitle" character varying, "body" text, "main_image" text, "thumb_image" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "skills" CASCADE[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "skills" ("id" bigserial primary key, "title" character varying, "percent_utilized" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (123.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (33.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (14.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "8723cf0fbde794401b239503bdd8347610679c66"], ["created_at", "2021-04-06 07:04:09.132728"], ["updated_at", "2021-04-06 07:04:09.132728"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (3.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "blogs" CASCADE[0m
+  [1m[35m (26.9ms)[0m  [1m[35mCREATE TABLE "blogs" ("id" bigserial primary key, "title" character varying, "string" character varying, "body" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "portfolios" CASCADE[0m
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE "portfolios" ("id" bigserial primary key, "title" character varying, "subtitle" character varying, "body" text, "main_image" text, "thumb_image" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "skills" CASCADE[0m
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE TABLE "skills" ("id" bigserial primary key, "title" character varying, "percent_utilized" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210330140153)[0m
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210312120352),
+(20210329105439);
+
+[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-04-06 07:04:09.383312"], ["updated_at", "2021-04-06 07:04:09.383312"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.7ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2021-04-06 07:04:09.394176"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "8723cf0fbde794401b239503bdd8347610679c66"], ["created_at", "2021-04-06 07:04:09.400596"], ["updated_at", "2021-04-06 07:04:09.400596"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (0.7ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "My blog post 0"], ["body", "Lorem ipsum dolor sit amet, \n    consetetur sadipscing elitr, \n    sed diam nonumy eirmod tempor \n    invidunt ut labore et dolore \n    magna aliquyam erat, \n   sed diam voluptua."], ["created_at", "2021-04-06 07:04:09.495416"], ["updated_at", "2021-04-06 07:04:09.495416"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (0.3ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "My blog post 1"], ["body", "Lorem ipsum dolor sit amet, \n    consetetur sadipscing elitr, \n    sed diam nonumy eirmod tempor \n    invidunt ut labore et dolore \n    magna aliquyam erat, \n   sed diam voluptua."], ["created_at", "2021-04-06 07:04:09.498885"], ["updated_at", "2021-04-06 07:04:09.498885"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (0.3ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "My blog post 2"], ["body", "Lorem ipsum dolor sit amet, \n    consetetur sadipscing elitr, \n    sed diam nonumy eirmod tempor \n    invidunt ut labore et dolore \n    magna aliquyam erat, \n   sed diam voluptua."], ["created_at", "2021-04-06 07:04:09.501450"], ["updated_at", "2021-04-06 07:04:09.501450"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (0.3ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "My blog post 3"], ["body", "Lorem ipsum dolor sit amet, \n    consetetur sadipscing elitr, \n    sed diam nonumy eirmod tempor \n    invidunt ut labore et dolore \n    magna aliquyam erat, \n   sed diam voluptua."], ["created_at", "2021-04-06 07:04:09.504098"], ["updated_at", "2021-04-06 07:04:09.504098"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (0.4ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "My blog post 4"], ["body", "Lorem ipsum dolor sit amet, \n    consetetur sadipscing elitr, \n    sed diam nonumy eirmod tempor \n    invidunt ut labore et dolore \n    magna aliquyam erat, \n   sed diam voluptua."], ["created_at", "2021-04-06 07:04:09.506704"], ["updated_at", "2021-04-06 07:04:09.506704"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (0.3ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "My blog post 5"], ["body", "Lorem ipsum dolor sit amet, \n    consetetur sadipscing elitr, \n    sed diam nonumy eirmod tempor \n    invidunt ut labore et dolore \n    magna aliquyam erat, \n   sed diam voluptua."], ["created_at", "2021-04-06 07:04:09.509275"], ["updated_at", "2021-04-06 07:04:09.509275"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "My blog post 6"], ["body", "Lorem ipsum dolor sit amet, \n    consetetur sadipscing elitr, \n    sed diam nonumy eirmod tempor \n    invidunt ut labore et dolore \n    magna aliquyam erat, \n   sed diam voluptua."], ["created_at", "2021-04-06 07:04:09.511894"], ["updated_at", "2021-04-06 07:04:09.511894"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (0.4ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "My blog post 7"], ["body", "Lorem ipsum dolor sit amet, \n    consetetur sadipscing elitr, \n    sed diam nonumy eirmod tempor \n    invidunt ut labore et dolore \n    magna aliquyam erat, \n   sed diam voluptua."], ["created_at", "2021-04-06 07:04:09.514348"], ["updated_at", "2021-04-06 07:04:09.514348"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (0.4ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "My blog post 8"], ["body", "Lorem ipsum dolor sit amet, \n    consetetur sadipscing elitr, \n    sed diam nonumy eirmod tempor \n    invidunt ut labore et dolore \n    magna aliquyam erat, \n   sed diam voluptua."], ["created_at", "2021-04-06 07:04:09.517014"], ["updated_at", "2021-04-06 07:04:09.517014"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (0.3ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "My blog post 9"], ["body", "Lorem ipsum dolor sit amet, \n    consetetur sadipscing elitr, \n    sed diam nonumy eirmod tempor \n    invidunt ut labore et dolore \n    magna aliquyam erat, \n   sed diam voluptua."], ["created_at", "2021-04-06 07:04:09.519706"], ["updated_at", "2021-04-06 07:04:09.519706"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE DATABASE "devcamp_portfolio_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE DATABASE "devcamp_portfolio_test" ENCODING = 'unicode'[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (5.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "blogs" CASCADE[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "blogs" ("id" bigserial primary key, "title" character varying, "string" character varying, "body" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "portfolios" CASCADE[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "portfolios" ("id" bigserial primary key, "title" character varying, "subtitle" character varying, "body" text, "main_image" text, "thumb_image" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "skills" CASCADE[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "skills" ("id" bigserial primary key, "title" character varying, "percent_utilized" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (6.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "blogs" CASCADE[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "blogs" ("id" bigserial primary key, "title" character varying, "string" character varying, "body" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "portfolios" CASCADE[0m
+  [1m[35m (12.2ms)[0m  [1m[35mCREATE TABLE "portfolios" ("id" bigserial primary key, "title" character varying, "subtitle" character varying, "body" text, "main_image" text, "thumb_image" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "skills" CASCADE[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "skills" ("id" bigserial primary key, "title" character varying, "percent_utilized" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "development"], ["updated_at", "2021-04-06 07:09:44.278851"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2021-04-06 07:09:44.289846"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (0.8ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "My blog post 0"], ["body", "Lorem ipsum dolor sit amet, \n    consetetur sadipscing elitr, \n    sed diam nonumy eirmod tempor \n    invidunt ut labore et dolore \n    magna aliquyam erat, \n   sed diam voluptua."], ["created_at", "2021-04-06 07:09:44.376362"], ["updated_at", "2021-04-06 07:09:44.376362"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (0.3ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "My blog post 1"], ["body", "Lorem ipsum dolor sit amet, \n    consetetur sadipscing elitr, \n    sed diam nonumy eirmod tempor \n    invidunt ut labore et dolore \n    magna aliquyam erat, \n   sed diam voluptua."], ["created_at", "2021-04-06 07:09:44.383058"], ["updated_at", "2021-04-06 07:09:44.383058"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (0.3ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "My blog post 2"], ["body", "Lorem ipsum dolor sit amet, \n    consetetur sadipscing elitr, \n    sed diam nonumy eirmod tempor \n    invidunt ut labore et dolore \n    magna aliquyam erat, \n   sed diam voluptua."], ["created_at", "2021-04-06 07:09:44.387045"], ["updated_at", "2021-04-06 07:09:44.387045"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (0.3ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "My blog post 3"], ["body", "Lorem ipsum dolor sit amet, \n    consetetur sadipscing elitr, \n    sed diam nonumy eirmod tempor \n    invidunt ut labore et dolore \n    magna aliquyam erat, \n   sed diam voluptua."], ["created_at", "2021-04-06 07:09:44.391288"], ["updated_at", "2021-04-06 07:09:44.391288"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (0.3ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "My blog post 4"], ["body", "Lorem ipsum dolor sit amet, \n    consetetur sadipscing elitr, \n    sed diam nonumy eirmod tempor \n    invidunt ut labore et dolore \n    magna aliquyam erat, \n   sed diam voluptua."], ["created_at", "2021-04-06 07:09:44.395931"], ["updated_at", "2021-04-06 07:09:44.395931"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (0.4ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "My blog post 5"], ["body", "Lorem ipsum dolor sit amet, \n    consetetur sadipscing elitr, \n    sed diam nonumy eirmod tempor \n    invidunt ut labore et dolore \n    magna aliquyam erat, \n   sed diam voluptua."], ["created_at", "2021-04-06 07:09:44.400582"], ["updated_at", "2021-04-06 07:09:44.400582"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (0.9ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "My blog post 6"], ["body", "Lorem ipsum dolor sit amet, \n    consetetur sadipscing elitr, \n    sed diam nonumy eirmod tempor \n    invidunt ut labore et dolore \n    magna aliquyam erat, \n   sed diam voluptua."], ["created_at", "2021-04-06 07:09:44.406067"], ["updated_at", "2021-04-06 07:09:44.406067"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (0.4ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "My blog post 7"], ["body", "Lorem ipsum dolor sit amet, \n    consetetur sadipscing elitr, \n    sed diam nonumy eirmod tempor \n    invidunt ut labore et dolore \n    magna aliquyam erat, \n   sed diam voluptua."], ["created_at", "2021-04-06 07:09:44.419585"], ["updated_at", "2021-04-06 07:09:44.419585"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (0.4ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "My blog post 8"], ["body", "Lorem ipsum dolor sit amet, \n    consetetur sadipscing elitr, \n    sed diam nonumy eirmod tempor \n    invidunt ut labore et dolore \n    magna aliquyam erat, \n   sed diam voluptua."], ["created_at", "2021-04-06 07:09:44.422292"], ["updated_at", "2021-04-06 07:09:44.422292"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (0.5ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "My blog post 9"], ["body", "Lorem ipsum dolor sit amet, \n    consetetur sadipscing elitr, \n    sed diam nonumy eirmod tempor \n    invidunt ut labore et dolore \n    magna aliquyam erat, \n   sed diam voluptua."], ["created_at", "2021-04-06 07:09:44.424839"], ["updated_at", "2021-04-06 07:09:44.424839"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSkill Create (0.7ms)[0m  [1m[32mINSERT INTO "skills" ("title", "percent_utilized", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Rails 0"], ["percent_utilized", 15], ["created_at", "2021-04-06 07:09:44.442841"], ["updated_at", "2021-04-06 07:09:44.442841"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSkill Create (0.3ms)[0m  [1m[32mINSERT INTO "skills" ("title", "percent_utilized", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Rails 1"], ["percent_utilized", 15], ["created_at", "2021-04-06 07:09:44.446526"], ["updated_at", "2021-04-06 07:09:44.446526"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSkill Create (0.6ms)[0m  [1m[32mINSERT INTO "skills" ("title", "percent_utilized", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Rails 2"], ["percent_utilized", 15], ["created_at", "2021-04-06 07:09:44.449179"], ["updated_at", "2021-04-06 07:09:44.449179"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSkill Create (0.4ms)[0m  [1m[32mINSERT INTO "skills" ("title", "percent_utilized", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Rails 3"], ["percent_utilized", 15], ["created_at", "2021-04-06 07:09:44.452056"], ["updated_at", "2021-04-06 07:09:44.452056"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSkill Create (0.4ms)[0m  [1m[32mINSERT INTO "skills" ("title", "percent_utilized", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Rails 4"], ["percent_utilized", 15], ["created_at", "2021-04-06 07:09:44.454630"], ["updated_at", "2021-04-06 07:09:44.454630"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Create (1.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Portfolio item 0"], ["subtitle", "My great service"], ["body", "Lorem ipsum dolor sit amet, \n      consetetur sadipscing elitr, \n      sed diam nonumy eirmod tempor \n      invidunt ut labore et dolore \n      magna aliquyam erat, \n     sed diam voluptua."], ["main_image", "https://fakeimg.pl/600x400/ADD8E6/000"], ["thumb_image", "https://fakeimg.pl/350x200/3090C7/000"], ["created_at", "2021-04-06 07:09:44.468878"], ["updated_at", "2021-04-06 07:09:44.468878"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Create (0.4ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Portfolio item 1"], ["subtitle", "My great service"], ["body", "Lorem ipsum dolor sit amet, \n      consetetur sadipscing elitr, \n      sed diam nonumy eirmod tempor \n      invidunt ut labore et dolore \n      magna aliquyam erat, \n     sed diam voluptua."], ["main_image", "https://fakeimg.pl/600x400/ADD8E6/000"], ["thumb_image", "https://fakeimg.pl/350x200/3090C7/000"], ["created_at", "2021-04-06 07:09:44.472579"], ["updated_at", "2021-04-06 07:09:44.472579"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Create (0.4ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Portfolio item 2"], ["subtitle", "My great service"], ["body", "Lorem ipsum dolor sit amet, \n      consetetur sadipscing elitr, \n      sed diam nonumy eirmod tempor \n      invidunt ut labore et dolore \n      magna aliquyam erat, \n     sed diam voluptua."], ["main_image", "https://fakeimg.pl/600x400/ADD8E6/000"], ["thumb_image", "https://fakeimg.pl/350x200/3090C7/000"], ["created_at", "2021-04-06 07:09:44.475467"], ["updated_at", "2021-04-06 07:09:44.475467"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Create (0.6ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Portfolio item 3"], ["subtitle", "My great service"], ["body", "Lorem ipsum dolor sit amet, \n      consetetur sadipscing elitr, \n      sed diam nonumy eirmod tempor \n      invidunt ut labore et dolore \n      magna aliquyam erat, \n     sed diam voluptua."], ["main_image", "https://fakeimg.pl/600x400/ADD8E6/000"], ["thumb_image", "https://fakeimg.pl/350x200/3090C7/000"], ["created_at", "2021-04-06 07:09:44.478080"], ["updated_at", "2021-04-06 07:09:44.478080"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Create (0.4ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Portfolio item 4"], ["subtitle", "My great service"], ["body", "Lorem ipsum dolor sit amet, \n      consetetur sadipscing elitr, \n      sed diam nonumy eirmod tempor \n      invidunt ut labore et dolore \n      magna aliquyam erat, \n     sed diam voluptua."], ["main_image", "https://fakeimg.pl/600x400/ADD8E6/000"], ["thumb_image", "https://fakeimg.pl/350x200/3090C7/000"], ["created_at", "2021-04-06 07:09:44.480754"], ["updated_at", "2021-04-06 07:09:44.480754"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Create (0.5ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Portfolio item 5"], ["subtitle", "My great service"], ["body", "Lorem ipsum dolor sit amet, \n      consetetur sadipscing elitr, \n      sed diam nonumy eirmod tempor \n      invidunt ut labore et dolore \n      magna aliquyam erat, \n     sed diam voluptua."], ["main_image", "https://fakeimg.pl/600x400/ADD8E6/000"], ["thumb_image", "https://fakeimg.pl/350x200/3090C7/000"], ["created_at", "2021-04-06 07:09:44.483368"], ["updated_at", "2021-04-06 07:09:44.483368"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Create (0.5ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Portfolio item 6"], ["subtitle", "My great service"], ["body", "Lorem ipsum dolor sit amet, \n      consetetur sadipscing elitr, \n      sed diam nonumy eirmod tempor \n      invidunt ut labore et dolore \n      magna aliquyam erat, \n     sed diam voluptua."], ["main_image", "https://fakeimg.pl/600x400/ADD8E6/000"], ["thumb_image", "https://fakeimg.pl/350x200/3090C7/000"], ["created_at", "2021-04-06 07:09:44.486088"], ["updated_at", "2021-04-06 07:09:44.486088"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Create (0.6ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Portfolio item 7"], ["subtitle", "My great service"], ["body", "Lorem ipsum dolor sit amet, \n      consetetur sadipscing elitr, \n      sed diam nonumy eirmod tempor \n      invidunt ut labore et dolore \n      magna aliquyam erat, \n     sed diam voluptua."], ["main_image", "https://fakeimg.pl/600x400/ADD8E6/000"], ["thumb_image", "https://fakeimg.pl/350x200/3090C7/000"], ["created_at", "2021-04-06 07:09:44.488782"], ["updated_at", "2021-04-06 07:09:44.488782"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Create (0.4ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Portfolio item 8"], ["subtitle", "My great service"], ["body", "Lorem ipsum dolor sit amet, \n      consetetur sadipscing elitr, \n      sed diam nonumy eirmod tempor \n      invidunt ut labore et dolore \n      magna aliquyam erat, \n     sed diam voluptua."], ["main_image", "https://fakeimg.pl/600x400/ADD8E6/000"], ["thumb_image", "https://fakeimg.pl/350x200/3090C7/000"], ["created_at", "2021-04-06 07:09:44.491663"], ["updated_at", "2021-04-06 07:09:44.491663"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[36mPortfolio Load (1.1ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2021-04-06 10:12:10 +0300
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/vyaradencheva/.rvm/gems/ruby-2.6.3/gems/railties-6.1.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/vyaradencheva/.rvm/gems/ruby-2.6.3/gems/railties-6.1.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.8ms | Allocations: 355)
+Completed 200 OK in 19ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 2667)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-06 10:12:27 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/vyaradencheva/.rvm/gems/ruby-2.6.3/gems/railties-6.1.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/vyaradencheva/.rvm/gems/ruby-2.6.3/gems/railties-6.1.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 12.9ms | Allocations: 680)
+Completed 200 OK in 20ms (Views: 16.1ms | ActiveRecord: 0.0ms | Allocations: 1797)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2021-04-06 10:12:29 +0300
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mBlog Load (2.9ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:5
+  [1m[36mSkill Load (1.6ms)[0m  [1m[34mSELECT "skills".* FROM "skills" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:8
+  Rendered pages/home.html.erb within layouts/application (Duration: 77.8ms | Allocations: 10971)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 112.7ms | Allocations: 30439)
+Completed 200 OK in 119ms (Views: 79.2ms | ActiveRecord: 36.2ms | Allocations: 32011)
+
+
+Started GET "/pages" for 127.0.0.1 at 2021-04-06 10:12:30 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/pages"):
+  
+Started GET "/pages/home" for 127.0.0.1 at 2021-04-06 10:12:31 +0300
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mBlog Load (1.8ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:5
+  [1m[36mSkill Load (2.0ms)[0m  [1m[34mSELECT "skills".* FROM "skills" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:8
+  Rendered pages/home.html.erb within layouts/application (Duration: 14.1ms | Allocations: 3248)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.6ms | Allocations: 7037)
+Completed 200 OK in 30ms (Views: 25.5ms | ActiveRecord: 3.7ms | Allocations: 7536)
+
+
+Started GET "/pages" for 127.0.0.1 at 2021-04-06 10:12:33 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/pages"):
+  
+Started GET "/pages/home" for 127.0.0.1 at 2021-04-06 10:12:35 +0300
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mBlog Load (2.0ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:5
+  [1m[36mSkill Load (2.3ms)[0m  [1m[34mSELECT "skills".* FROM "skills" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:8
+  Rendered pages/home.html.erb within layouts/application (Duration: 15.7ms | Allocations: 3144)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.9ms | Allocations: 6797)
+Completed 200 OK in 30ms (Views: 23.7ms | ActiveRecord: 4.3ms | Allocations: 7206)
+
+
